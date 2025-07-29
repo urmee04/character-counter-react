@@ -8,7 +8,7 @@ export interface TextInputProps {
   initialValue?: string;
 }
 
-//StatsDisplay interface and pops
+//StatsDisplay interface and props
 
 export interface TextStats {
   characterCount: number;
@@ -19,4 +19,14 @@ export interface TextStats {
 export interface StatsDisplayProps {
   stats: TextStats;
   showReadingTime?: boolean;
+  minWords?: number;
+  maxWords?: number;
+  targetReadingTime?: number;
+}
+
+//Caracter Counter Props
+export interface CharacterCounterProps {
+  minWords?: number;
+  maxWords?: number;
+  targetReadingTime?: number; // in minutes
 }
