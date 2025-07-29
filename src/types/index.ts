@@ -7,3 +7,16 @@ export interface TextInputProps {
   //optional: starting text value
   initialValue?: string;
 }
+
+//StatsDisplay interface and pops
+
+export interface TextStats {
+  characterCount: number;
+  wordCount: number;
+  readingTime: number; // in minutes
+}
+
+export interface StatsDisplayProps {
+  stats: TextStats;
+  showReadingTime?: boolean;
+}
