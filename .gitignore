@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# other files
+eslint.config.js
+tsconfig.app.json
+tsconfig.node.json
