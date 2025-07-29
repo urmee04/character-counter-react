@@ -66,3 +66,17 @@ React's reconciliation process is efficient in updating the DOM. For rapid text 
 **What challenges did you face when implementing the statistics calculations?**
 
 The core statistics (character and word count) are straightforward. The main consideration was handling the empty string case for word count to avoid incorrect calculations or errors. For reading time, the primary challenge was presenting it in a user-friendly format (minutes:seconds) rather than a raw decimal, which the formatReadingTime function addresses. Integrating the minWords, maxWords, and targetReadingTime for visual feedback was also a key addition to enhance the user experience.
+
+#### References
+
+Besides taking help from class lectures, materials and code suggestions provided in the lessons, I used following resources to complete this lab:
+
+- [TypeScript Tutorial](https://www.youtube.com/watch?v=-LRg9gC2ZB0)
+
+- [Responding-to-events](https://react.dev/learn/responding-to-events)
+
+- [padStart()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+
+- [React Docs](https://react.dev/learn)
+
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
