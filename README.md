@@ -8,11 +8,11 @@ This application simulates a component for a content management system, designed
 
 #### Objectives
 
-**State Management**: Implements state management using the `useState` hook to handle text input and derived statistics.
-**Event Handling**: Effectively handles user input events from the text area.
-**UI Updates**: Builds components that dynamically update their UI in response to state changes.
-**Component Communication (Callback Pattern)**: Utilizes the callback pattern for communication between parent (`CharacterCounter`) and child (`TextInput`) components.
-**Responsive Interface**: Creates a user-friendly and responsive interface for tracking text statistics.
+- **State Management**: Implements state management using the `useState` hook to handle text input and derived statistics.
+- **Event Handling**: Effectively handles user input events from the text area.
+- **UI Updates**: Builds components that dynamically update their UI in response to state changes.
+- **Component Communication (Callback Pattern)**: Utilizes the callback pattern for communication between parent (`CharacterCounter`) and child (`TextInput`) components.
+- **Responsive Interface**: Creates a user-friendly and responsive interface for tracking text statistics.
 
 #### How to Clone and Run the Project
 
@@ -49,8 +49,6 @@ src/
     index.ts              # TypeScript type definitions
 ```
 
----
-
 #### Reflection Questions:
 
 **How did you handle state updates when the text changed?**
@@ -58,10 +56,13 @@ src/
 To handle state updates I used useState hook in the CharacterCounter component. The TextInput component uses an onChange event handler to capture the new value from the textarea and then calls the onTextChange prop, which is handleTextChange in the parent CharacterCounter component. handleTextChange then updates the text state using setText(newText). This causes the CharacterCounter component to re-render, recalculating stats and passing the updated stats to StatsDisplay.
 
 **What considerations did you make when calculating reading time?**
+
 The reading time calculation assumes an average reading speed of 200 words per minute. It handles the edge case of an empty string or no words by returning 0, preventing division by zero errors. The formatReadingTime helper function ensures the output is user-friendly (minutes:seconds) and correctly pads seconds with a leading zero if needed.
 
 **How did you ensure the UI remained responsive during rapid text input?**
+
 React's reconciliation process is efficient in updating the DOM. For rapid text input, the setText call triggers a re-render, but React only updates the necessary parts of the DOM. The calculations are simple and fast enough not to cause performance issues for typical text lengths. I used media queries that ensures the layout adapts gracefully to different screen sizes.
 
 **What challenges did you face when implementing the statistics calculations?**
+
 The core statistics (character and word count) are straightforward. The main consideration was handling the empty string case for word count to avoid incorrect calculations or errors. For reading time, the primary challenge was presenting it in a user-friendly format (minutes:seconds) rather than a raw decimal, which the formatReadingTime function addresses. Integrating the minWords, maxWords, and targetReadingTime for visual feedback was also a key addition to enhance the user experience.
